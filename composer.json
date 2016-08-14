@@ -1,0 +1,10 @@
+{
+  "name": "ivanvgladkov/geocoding",
+  "description": "Geocoding service",
+  "require": {
+    "php": "^7.0",
+    "illuminate/contracts": "5.2.*",
+    "illuminate/support": "5.2.*",
+    "guzzlehttp/guzzle": "^6.2"
+  }
+}
