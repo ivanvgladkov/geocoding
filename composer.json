@@ -1,5 +1,5 @@
 {
-  "name": "ivanvgladkov/geocoding",
+  "name": "ig/geocoding",
   "description": "Geocoding service",
   "require": {
     "php": "^7.0",
