@@ -6,5 +6,10 @@
     "illuminate/contracts": "5.2.*",
     "illuminate/support": "5.2.*",
     "guzzlehttp/guzzle": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ivanvgladkov\\Geocoding\\": "src/"
+    }
   }
 }
