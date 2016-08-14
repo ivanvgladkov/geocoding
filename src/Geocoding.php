@@ -1,11 +1,11 @@
 <?php
 
-namespace Geocoding;
+namespace Ivanvgladkov\Geocoding;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository as CacheContract;
-use Geocoding\Exceptions\BadRequestException;
-use Geocoding\Exceptions\InvalidResponseException;
+use Ivanvgladkov\Geocoding\Exceptions\BadRequestException;
+use Ivanvgladkov\Geocoding\Exceptions\InvalidResponseException;
 
 /**
  * Class Geocoding

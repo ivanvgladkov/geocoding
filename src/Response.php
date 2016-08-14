@@ -1,6 +1,6 @@
 <?php
 
-namespace Geocoding;
+namespace Ivanvgladkov\Geocoding;
 
 /**
  * Class GeocodingResponse

@@ -1,6 +1,6 @@
 <?php
 
-namespace Geocoding\Exceptions;
+namespace Ivanvgladkov\Geocoding\Exceptions;
 
 class InvalidResponseException extends \Exception
 {
