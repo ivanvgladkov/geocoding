@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Library\Geocoding;
+namespace Geocoding;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository as CacheContract;
-use App\Library\Geocoding\Exceptions\BadRequestException;
-use App\Library\Geocoding\Exceptions\InvalidResponseException;
+use Geocoding\Exceptions\BadRequestException;
+use Geocoding\Exceptions\InvalidResponseException;
 
 /**
  * Class Geocoding
- * @package App\Library\Geocoding
+ * @package Geocoding
  */
 class Geocoding
 {

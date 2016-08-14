@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Library\Geocoding;
+namespace Geocoding;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Cache\Repository as CacheContract;

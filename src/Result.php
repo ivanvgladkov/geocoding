@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Library\Geocoding;
+namespace Geocoding;
 
 /**
  * Class Result
- * @package App\Library\Geocoding
+ * @package Geocoding
  */
 class Result
 {
