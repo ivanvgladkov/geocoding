@@ -73,18 +73,32 @@ class Request
         'locationType' => 'location_type',
     ];
 
+    /**
+     * @param string $language
+     * @return $this
+     */
     public function setLanguage(string $language)
     {
-        $this->language = $language;
+        $language = trim($language);
+        $this->language = $language === '' ? null : $language;
         return $this;
     }
 
+    /**
+     * @param string $address
+     * @return $this
+     */
     public function setAddress(string $address)
     {
-        $this->address = $address;
+        $address = trim($address);
+        $this->address = $address === '' ? null : $address;
         return $this;
     }
 
+    /**
+     * @param array $components
+     * @return $this
+     */
     public function setComponents(array $components)
     {
         $requestComponents = [];
@@ -96,12 +110,23 @@ class Request
         return $this;
     }
 
+    /**
+     * @param string $region
+     * @return $this
+     */
     public function setRegion(string $region)
     {
         $this->region = $region;
         return $this;
     }
 
+    /**
+     * @param string $southwestLatitude
+     * @param string $southwestLongitude
+     * @param string $northeastLatitude
+     * @param string $northeastLongitude
+     * @return $this
+     */
     public function setBounds(
         string $southwestLatitude,
         string $southwestLongitude,
@@ -112,38 +137,76 @@ class Request
         return $this;
     }
 
-    public function setLongitude(string $value)
+    /**
+     * @param string $longitude
+     * @return $this
+     */
+    public function setLongitude(string $longitude)
     {
-        $this->longitude = $value;
+        $longitude = trim($longitude);
+        $this->longitude = $longitude === '' ? null : $longitude;
         $this->setLatlng();
         return $this;
     }
 
-    public function setLatitude(string $value)
+    /**
+     * @param string $latitude
+     * @return $this
+     */
+    public function setLatitude(string $latitude)
     {
-        $this->latitude = $value;
+        $latitude = trim($latitude);
+        $this->latitude = $latitude === '' ? null : $latitude;
         $this->setLatlng();
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     private function setLatlng()
     {
-        $this->latlng = $this->latitude . ',' . $this->longitude;
+        if ($this->latitude && $this->longitude) {
+            $this->latlng = $this->latitude . ',' . $this->longitude;
+        }
+
         return $this;
     }
 
+    /**
+     * @param string $placeId
+     * @return $this
+     */
+    public function setPlaceId(string $placeId)
+    {
+        $placeId = trim($placeId);
+        $this->placeId = $placeId === '' ? null : $placeId;
+        return $this;
+    }
+
+    /**
+     * @param array $types
+     * @return $this
+     */
     public function setResultType(array $types)
     {
         $this->resultType = implode('|', $types);
         return $this;
     }
 
+    /**
+     * @param array $types
+     * @return $this
+     */
     public function setLocationType(array $types)
     {
         $this->locationType = implode('|', $types);
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function getMappedParams() : array
     {
         if ($this->address !== null || $this->components !== null) {

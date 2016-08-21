@@ -37,12 +37,19 @@ class Geocoding
         $this->baseUrl = 'https://maps.googleapis.com/maps/api/geocode';
     }
 
+    /**
+     * @param CacheContract $cache
+     * @return $this
+     */
     public function setCache(CacheContract $cache)
     {
         $this->cache = $cache;
         return $this;
     }
 
+    /**
+     * @return Request
+     */
     public function getRequest() : Request
     {
         return new Request();
@@ -84,6 +91,10 @@ class Geocoding
         return $response;
     }
 
+    /**
+     * @param string $url
+     * @return bool
+     */
     private function isResultCached(string $url) : bool
     {
         if ($this->cache) {
@@ -93,6 +104,10 @@ class Geocoding
         return false;
     }
 
+    /**
+     * @param string $url
+     * @return mixed|null
+     */
     private function getCachedResult(string $url)
     {
         if ($this->cache) {
@@ -102,6 +117,10 @@ class Geocoding
         return null;
     }
 
+    /**
+     * @param string $url
+     * @param Response $response
+     */
     private function cacheResult(string $url, Response $response)
     {
         if ($this->cache) {
@@ -109,6 +128,10 @@ class Geocoding
         }
     }
 
+    /**
+     * @param string $url
+     * @return mixed
+     */
     private function getCacheKey(string $url)
     {
         return base64_encode($url);
